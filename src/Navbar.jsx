@@ -5,9 +5,11 @@ function Navbar() {
         <ul className='navbar'>
             <li className='navbar-item'>
                 <NavLink to='/' className='navbar-link'>Weather</NavLink>
+                <div class="underline"></div>
             </li>
             <li className='navbar-item'>
                 <NavLink to='/compare' className='navbar-link'>Compare</NavLink>
+                <div class="underline"></div>
             </li>
         </ul>
     )
