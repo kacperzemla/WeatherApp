@@ -59,15 +59,63 @@ code {
 
 .compare-container{
   display: flex;
-  padding: 2rem;
+  padding: 1rem;
   gap: 3rem;
   flex-wrap: wrap;
   justify-content: center;
 }
 
 .service-container{
-  width: 300px;
+  width: 100%;
   height: 200px;
-  background-color: rgb(31, 28, 28);
-  border-radius: 30px;
+  background-color: rgb(85, 85, 116);;
+  border-radius: 20px;
+  /* box-shadow: 0px 5px 20px 3px #9db4d6; */
+}
+
+.weather-container{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  color: #fff;
+}
+
+.date{
+  color: rgb(218, 218, 218);
+}
+
+.location{
+  padding: 1rem 0;
+  font-weight: 500;
+  font-size: 2.4rem;
+}
+
+.weather-data{
+  display: flex;
+  justify-content: center;
+  margin-top: 2rem;
+}
+
+.weather-data-item{
+  text-align: center;
+  padding: 0 1.5rem;
+}
+
+.weather-data-name{
+  color: rgb(218, 218, 218);
+  margin-bottom: 0.5rem;
+}
+
+.weather-data-value{
+  font-size: 1.5rem;
+}
+
+.media-container{
+  display: flex;
+  justify-content: space-between;
+  padding: 1rem;
+}
+
+.media-container div{
+  margin: 1rem;
 }

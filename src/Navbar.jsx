@@ -9,7 +9,7 @@ function Navbar() {
             </li>
             <li className='navbar-item'>
                 <NavLink to='/compare' className='navbar-link'>Compare</NavLink>
-                <div class="underline"></div>
+                <div className="underline"></div>
             </li>
         </ul>
     )
