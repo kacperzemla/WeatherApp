@@ -1,0 +1,68 @@
+{
+    "weather": [
+        {
+            "serviceName": "onet"
+        },
+        {
+            "name": "Monday",
+            "date": "4 April",
+            "eightHour": {
+                "temp": "4",
+                "humidity": "20",
+                "wind": "15"
+            },
+            "twelveHour": {
+                "temp": "4",
+                "humidity": "20",
+                "wind": "15"
+            }
+        },
+        {
+            "name": "Tuesday",
+            "date": "5 April",
+            "temp": "6",
+            "humidity": "20",
+            "wind": "19"
+        },
+        {
+            "name": "Monday",
+            "date": "6 Wednesday",
+            "temp": "17",
+            "humidity": "30",
+            "wind": "18"
+        }
+    ],
+    "weather2": [
+        {
+            "serviceName": "interia"
+        },
+        {
+            "name": "Monday",
+            "date": "4 April",
+            "eightHour": {
+                "temp": "4",
+                "humidity": "20",
+                "wind": "15"
+            },
+            "twelveHour": {
+                "temp": "4",
+                "humidity": "20",
+                "wind": "15"
+            }
+        },
+        {
+            "name": "Tuesday",
+            "date": "5 April",
+            "temp": "6",
+            "humidity": "20",
+            "wind": "19"
+        },
+        {
+            "name": "Monday",
+            "date": "6 Wednesday",
+            "temp": "17",
+            "humidity": "30",
+            "wind": "18"
+        }
+    ]
+}
