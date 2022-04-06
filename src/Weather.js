@@ -13,7 +13,7 @@ function Weather() {
         <div className="weather-container">
             <h1 className="location">Kraków</h1>
             <p className="date">{month} {day}, {year}</p>
-            <WeatherData />
+            <WeatherData temp = { 35 } wind = { 5 } humidity = {321} />
 
 
 
