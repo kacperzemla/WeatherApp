@@ -156,3 +156,20 @@ code {
   margin-top: 1rem;
   color: var(--white);
 }
+
+.icon-container{
+  display: flex;
+  justify-content: space-between;
+  padding: 1rem;
+}
+
+.settings-icon{
+  height: 32px;
+  width: 32px;
+  color: var(--grey);
+}
+
+.settings-icon:hover{
+  color: var(--white);
+  cursor: pointer;
+}
