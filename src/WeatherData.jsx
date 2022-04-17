@@ -1,4 +1,4 @@
-function WeatherData ({temp, wind, humidity}){
+function WeatherData ({temp, wind, humidity, rain}){
     return (
         <div className="weather-data">
         <div className="weather-data-item">
@@ -12,6 +12,10 @@ function WeatherData ({temp, wind, humidity}){
         <div className="weather-data-item">
             <p className="weather-data-name">Humidity</p>
             <p className="weather-data-value">{ humidity }%</p>
+        </div>
+        <div className="weather-data-item">
+            <p className="weather-data-name">Rain</p>
+            <p className="weather-data-value">{ rain }mm</p>
         </div>
     </div>
     );
