@@ -19,13 +19,14 @@ function ServiceContainer({ service, region, hour }) {
   const [day2, setDay2] = useState([]);
   const [day3, setDay3] = useState([]);
   const [selected, setSelected] = useState(1);
+  const [actualDay, setActualDay] = useState([]);
 
   let today = new Date();
   let dayFirst = today.toISOString().split("T")[0];
   let daySecond = addDays(today, 1);
   let dayThird = addDays(today, 2);
 
-  console.log(hour);
+
 
   useEffect(() => {
     if (data) {
@@ -33,7 +34,7 @@ function ServiceContainer({ service, region, hour }) {
       setDay2(data.filter((object) => object.weather_time === daySecond));
       setDay3(data.filter((object) => object.weather_time === dayThird));
     }
-  }, [data, hour]);
+  }, [data]);
 
   useEffect(() => {
     if (day1.length !== 0) {
@@ -41,8 +42,21 @@ function ServiceContainer({ service, region, hour }) {
       setWind(getWind(day1));
       setHumidity(getHumidity(day1));
       setRain(getRain(day1));
+      setActualDay(day1);
     }
   }, [day1]);
+
+  useEffect(() => {
+    if (actualDay.length !== 0) {
+      console.log(actualDay)
+    setTemp(getTemp(actualDay));
+    setWind(getWind(actualDay));
+    setHumidity(getHumidity(actualDay));
+    setRain(getRain(actualDay));
+    }
+  }, [hour])
+  
+  
 
   function getTemp(day) {
     let [hourTemp] = day.filter((object) => object.hour === parseInt(hour));
@@ -75,13 +89,14 @@ function ServiceContainer({ service, region, hour }) {
     setWind(getWind(day));
     setHumidity(getHumidity(day));
     setRain(getRain(day));
+    setActualDay(day);
   }
 
   function changeSelected(dayNum) {
     setSelected(dayNum);
   }
 
-  console.log(selected);
+
 
   //https://slider-react-component.vercel.app/
   // serwis/dzien -> 8/12/16/20/24
