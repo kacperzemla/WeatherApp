@@ -21,10 +21,13 @@ function ServiceContainer({ service, region, hour }) {
   const [selected, setSelected] = useState(1);
   const [actualDay, setActualDay] = useState([]);
 
+  let daysArray = ['Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday', 'Saturday', 'Sunday'];
   let today = new Date();
   let dayFirst = today.toISOString().split("T")[0];
   let daySecond = addDays(today, 1);
   let dayThird = addDays(today, 2);
+
+
 
 
 
@@ -60,22 +63,22 @@ function ServiceContainer({ service, region, hour }) {
 
   function getTemp(day) {
     let [hourTemp] = day.filter((object) => object.hour === parseInt(hour));
-    return hourTemp.temperature;
+    return hourTemp ? hourTemp.temperature : 'no data';
   }
 
   function getWind(day) {
     let [hourTemp] = day.filter((object) => object.hour === parseInt(hour));
-    return hourTemp.wind;
-  }
+    return  hourTemp ?  hourTemp.wind  : 'no data';
+  } 
 
   function getRain(day) {
     let [hourTemp] = day.filter((object) => object.hour === parseInt(hour));
-    return hourTemp.rain;
+    return  hourTemp ? hourTemp.rain  : 'no data';
   }
 
   function getHumidity(day) {
     let [hourTemp] = day.filter((object) => object.hour === parseInt(hour));
-    return hourTemp.humidity;
+    return  hourTemp ?  hourTemp.humidity  : 'no data';
   }
 
   function addDays(date, days) {
@@ -96,7 +99,7 @@ function ServiceContainer({ service, region, hour }) {
     setSelected(dayNum);
   }
 
-
+  console.log(daysArray[today.getDay()-1]);
 
   //https://slider-react-component.vercel.app/
   // serwis/dzien -> 8/12/16/20/24
@@ -106,7 +109,7 @@ function ServiceContainer({ service, region, hour }) {
         <div>
           {" "}
           <div className="media-container">
-            <div className="service-logo">Interia</div>
+            <div className="service-logo">{service}</div>
             <div className="service-weather__icon">icon</div>
           </div>
           <WeatherData
@@ -125,7 +128,7 @@ function ServiceContainer({ service, region, hour }) {
               style={selected === 1 ? active : inactive}
             >
               <div className="next-day-icon"></div>
-              <p className="next-day-name">Mon.</p>
+              <p className="next-day-name">{daysArray[(today.getDay()-1)%7]}</p>
             </div>
             <div
               className="next-day"
@@ -136,7 +139,7 @@ function ServiceContainer({ service, region, hour }) {
               style={selected === 2 ? active : inactive}
             >
               <div className="next-day-icon"></div>
-              <p className="next-day-name">Tue.</p>
+              <p className="next-day-name">{daysArray[(today.getDay())%7]}</p>
             </div>
             <div
               className="next-day"
@@ -147,7 +150,7 @@ function ServiceContainer({ service, region, hour }) {
               style={selected === 3 ? active : inactive}
             >
               <div className="next-day-icon"></div>
-              <p className="next-day-name">xdd</p>
+              <p className="next-day-name">{daysArray[(today.getDay()+1)%7]}</p>
             </div>
           </div>
         </div>

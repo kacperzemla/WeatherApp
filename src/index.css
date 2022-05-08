@@ -2,7 +2,7 @@
 
 :root{
   --primaryColor: rgb(54, 54, 73);
-  --secondaryColor: rgb(85, 85, 116);
+  --secondaryColor: #555574;
   --white: #fff;
   --grey: rgb(114, 114, 114);
 }
@@ -87,6 +87,8 @@ code {
   color: var(--white);
 }
 
+
+
 .date{
   color: rgb(218, 218, 218);
 }
@@ -101,6 +103,7 @@ code {
   display: flex;
   justify-content: center;
   margin-top: 2rem;
+  flex-wrap: wrap;
 }
 
 .weather-data-item{
@@ -115,6 +118,7 @@ code {
 
 .weather-data-value{
   font-size: 1.5rem;
+  color: #fff;
 }
 
 .media-container{
@@ -174,9 +178,66 @@ code {
   cursor: pointer;
 }
 
-.compare-select{
+.compare-select, .emailForm-input{
   padding: 0.5rem 1rem;
   border-radius: 12px;
   border: none;
   cursor: pointer;
+}
+
+.emailForm{
+  color: var(--white);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.emailForm-button{
+  padding: 0.5rem 1rem;
+  border-radius: 12px;
+  border: none;
+  cursor: pointer;
+  font-weight: 700;
+  background-color: var(--grey);
+  color: white;
+}
+
+.emailForm-button:hover{
+  background-color: var(--secondaryColor);
+}
+
+.nodata-error{
+  font-size: 2rem;
+}
+
+.daySelect{
+  display: flex;
+  gap: 3rem;
+  justify-content: center;
+  width: 100%;
+  margin: 2rem 0;
+}
+
+.modelTitle{
+  margin-top: 2rem;
+  font-size: 2.4rem;
+  text-align: center;
+}
+
+.model-container{
+  display: flex;
+  justify-content: center;
+  background-color: var(--secondaryColor);
+  margin: 1rem;
+  border-radius: 20px;
+  padding: 1rem;
+  flex-wrap: wrap;
+}
+
+@media(min-width: 600px){
+  .model-container{
+    width: 600px;
+  }
 }
