@@ -67,9 +67,9 @@ function Weather() {
       </p>
       {data && (
         <WeatherData
-          temp={data[data.length - 1].temperature}
+          temp={data[0].temperature}
           wind={""}
-          humidity={data[data.length - 1].humidity}
+          humidity={data[0].humidity}
           rain={""}
         />
       )}
